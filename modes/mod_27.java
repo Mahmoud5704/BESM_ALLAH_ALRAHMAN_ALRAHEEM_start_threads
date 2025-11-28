@@ -6,13 +6,10 @@ import java.util.List;
 import verify.Col_verify;
 import verify.Row_verify;
 import verify.box_verify;
+import verify.print;
 
 public class mod_27 {
 
-    public ArrayList<String> rrr = new ArrayList();
-    public ArrayList<String> ccc = new ArrayList();
-    public ArrayList<String> bbb = new ArrayList();
-    
     int[][] board;
 
     public mod_27(int[][] board) {
@@ -20,6 +17,7 @@ public class mod_27 {
     }
 
     public void verify() {
+        print p=new print();
         List<Boolean> results = new ArrayList<>();
         List<thread> threads = new ArrayList<>();
         List<Thread> realthreads = new ArrayList<>();
@@ -27,7 +25,7 @@ public class mod_27 {
         for (int i = 0; i < 9; i++) {
 
             //for rows
-            Row_verify rr = new Row_verify(board, i);
+            Row_verify rr = new Row_verify(board, i,p);
             thread thr = new thread(rr);
             Thread tr = new Thread(thr);//real thread row bgd
             threads.add(thr);
@@ -35,32 +33,23 @@ public class mod_27 {
             tr.start();
 
             // for cols
-            Col_verify cc = new Col_verify(board, i);
+            Col_verify cc = new Col_verify(board, i,p);
             thread thc = new thread(cc);
             Thread tc = new Thread(thc);//real thread row bgd
             threads.add(thc);
             realthreads.add(tc);
             tc.start();
 
-            //for box
-            
-        
-            box_verify bb = new box_verify(board, i + 2);
+            //for b
+            box_verify bb = new box_verify(board, i + 2,p);
             thread thb = new thread(bb);
             Thread tb = new Thread(thb);//real thread row bgd
             threads.add(thb);
             realthreads.add(tb);
             tb.start();
-        
-             
-        
-        /////////////
-            
-            
+
         }
 
-    
-     
         for (Thread t : realthreads) {
             try {
                 t.join();
@@ -79,22 +68,19 @@ public class mod_27 {
         }
 
         if (ok) {
+            System.out.println("***************************************************************");
             System.out.println("VALID");
+            System.out.println("***************************************************************");
+
         } else {
+            System.out.println("***************************************************************");
             System.out.println("INVALID");
+            System.out.println("***************************************************************");
+            p.printResults();           
         }
+
     }
 
-    public void setrow_toprint(String s) {
-        rrr.add(s);
-    }
-
-    public void setcol_toprint(String s) {
-        ccc.add(s);
-    }
-
-    public void setbox_toprint(String s) {
-        bbb.add(s);
-    }
+ 
 
 }
