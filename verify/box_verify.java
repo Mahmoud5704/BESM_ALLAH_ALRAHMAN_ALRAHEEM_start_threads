@@ -1,16 +1,19 @@
 package verify;
+
 import interfaces.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public class box_verify implements dublicates , check {
+public class box_verify implements dublicates, check {
 
-    int box;        
+    int box;
     int[][] board;
+    print p;
 
-  public  box_verify(int[][] board, int box) {
+    public box_verify(int[][] board, int box,print p) {
         this.box = box;
         this.board = board;
+        this.p=p;
     }
 
     public List<Integer> find_dub(int[] box, int x) {
@@ -24,7 +27,7 @@ public class box_verify implements dublicates , check {
     }
 
     public boolean checker() {
-        int startRow = (box / 3) * 3; 
+        int startRow = (box / 3) * 3;
         int startCol = (box % 3) * 3;
         boolean ok = true;
 
@@ -43,7 +46,9 @@ public class box_verify implements dublicates , check {
 
             if (count > 1) {
                 ok = false;
-                System.out.println("Duplicates of " + x + " in BOX " + box + " at positions: " + positions);
+                String s = "Duplicates of " + x + " in BOX " + box + " at positions: " + positions;
+                System.out.println(s);
+                p.setbox_toprint(s);
             }
         }
 

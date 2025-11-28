@@ -1,18 +1,21 @@
 package verify;
+
 import interfaces.*;
 import java.util.List;
 import java.util.ArrayList;
+import modes.mod_27;
 
-public class Row_verify implements dublicates,check  {
+public class Row_verify implements dublicates, check {
 
     int row;
     int[][] board;
-   
-    public Row_verify(int[][] board,int row) {
-        this.row = row;
-        this.board=board;
-    }
+    print p;
 
+    public Row_verify(int[][] board, int row, print p) {
+        this.row = row;
+        this.board = board;
+        this.p = p;
+    }
 
     public List<Integer> find_dub(int[] row, int x) {
         List<Integer> ind = new ArrayList<>();
@@ -30,8 +33,9 @@ public class Row_verify implements dublicates,check  {
         for (int x = 1; x <= 9; x++) {
             List<Integer> dups = find_dub(r, x);
             if (dups.size() > 1) {
-                System.out.println("Duplicates of " + x + " in ROW " + row + " at cols: " + dups);
-                //rrr.
+                String s = "Duplicates of " + x + " in ROW " + row + " at cols: " + dups;
+                System.out.println(s);
+                p.setrow_toprint(s);
                 ok = false;
             }
         }
