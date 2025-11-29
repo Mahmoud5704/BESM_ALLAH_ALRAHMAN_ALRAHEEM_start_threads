@@ -47,7 +47,7 @@ public class box_verify implements dublicates, check {
             if (count > 1) {
                 ok = false;
                 String s = "Duplicates of " + x + " in BOX " + box + " at positions: " + positions;
-                System.out.println(s);
+              //  System.out.println(s);
                 p.setbox_toprint(s);
             }
         }

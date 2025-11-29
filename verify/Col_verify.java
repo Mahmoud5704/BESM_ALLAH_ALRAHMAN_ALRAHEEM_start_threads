@@ -36,7 +36,7 @@ public class Col_verify implements dublicates, check {
             List<Integer> dups = find_dub(c, x);
             if (dups.size() > 1) {
                 String s = "Duplicates of " + x + " in col " + col + " at rows: " + dups;
-                System.out.println(s);
+               // System.out.println(s);
                 p.setcol_toprint(s);
                 ok = false;
             }

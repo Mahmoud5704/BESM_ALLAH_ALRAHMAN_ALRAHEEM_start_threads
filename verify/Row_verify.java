@@ -34,7 +34,7 @@ public class Row_verify implements dublicates, check {
             List<Integer> dups = find_dub(r, x);
             if (dups.size() > 1) {
                 String s = "Duplicates of " + x + " in ROW " + row + " at cols: " + dups;
-                System.out.println(s);
+              //  System.out.println(s);
                 p.setrow_toprint(s);
                 ok = false;
             }
