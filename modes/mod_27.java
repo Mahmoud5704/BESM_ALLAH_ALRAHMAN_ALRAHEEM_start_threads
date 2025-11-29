@@ -41,7 +41,7 @@ public class mod_27 {
             tc.start();
 
             //for b
-            box_verify bb = new box_verify(board, i + 2,p);
+            box_verify bb = new box_verify(board, i ,p);
             thread thb = new thread(bb);
             Thread tb = new Thread(thb);//real thread row bgd
             threads.add(thb);
