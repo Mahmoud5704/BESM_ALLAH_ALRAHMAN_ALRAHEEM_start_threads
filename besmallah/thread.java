@@ -1,5 +1,5 @@
 package besmallah;
-import interfaces.check;
+import interface_abstract.check;
 
 
 public class thread implements Runnable{

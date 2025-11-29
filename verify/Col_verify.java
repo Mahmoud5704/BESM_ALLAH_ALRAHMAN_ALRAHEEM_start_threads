@@ -1,10 +1,10 @@
 package verify;
 
-import interfaces.*;
+import interface_abstract.check;
+import interface_abstract.dublicates;
 import java.util.List;
-import java.util.ArrayList;
 
-public class Col_verify implements dublicates, check {
+public class Col_verify extends dublicates implements check {
 
     int col;
     int[][] board;
@@ -14,16 +14,6 @@ public class Col_verify implements dublicates, check {
         this.col = col;
         this.board = board;
         this.p = p;
-    }
-
-    public List<Integer> find_dub(int[] col, int x) {
-        List<Integer> ind = new ArrayList<>();
-        for (int j = 0; j < col.length; j++) {
-            if (col[j] == x) {
-                ind.add(j);
-            }
-        }
-        return ind;
     }
 
     public boolean checker() {

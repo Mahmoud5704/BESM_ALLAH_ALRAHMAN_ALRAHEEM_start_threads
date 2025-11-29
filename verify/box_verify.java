@@ -1,10 +1,11 @@
 package verify;
 
-import interfaces.*;
+import interface_abstract.check;
+import interface_abstract.dublicates;
 import java.util.List;
 import java.util.ArrayList;
 
-public class box_verify implements dublicates, check {
+public class box_verify extends dublicates implements  check {
 
     int box;
     int[][] board;
@@ -16,15 +17,7 @@ public class box_verify implements dublicates, check {
         this.p=p;
     }
 
-    public List<Integer> find_dub(int[] box, int x) {
-        List<Integer> ind = new ArrayList<>();
-        for (int j = 0; j < box.length; j++) {
-            if (box[j] == x) {
-                ind.add(j);
-            }
-        }
-        return ind;
-    }
+
 
     public boolean checker() {
         int startRow = (box / 3) * 3;

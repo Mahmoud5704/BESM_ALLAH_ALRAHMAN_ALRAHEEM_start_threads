@@ -1,11 +1,11 @@
 package verify;
 
-import interfaces.*;
+import interface_abstract.check;
+import interface_abstract.dublicates;
 import java.util.List;
 import java.util.ArrayList;
-import modes.mod_27;
-
-public class Row_verify implements dublicates, check {
+ 
+public class Row_verify extends dublicates implements  check {
 
     int row;
     int[][] board;
