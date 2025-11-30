@@ -1,5 +1,4 @@
 package modes;
-
 import java.util.ArrayList;
 import java.util.List;
 import verify.Col_verify;
@@ -10,35 +9,33 @@ import verify.print;
 public class mod_0 {
 
     int[][] board;
-
     public mod_0(int[][] board) {
-        this.board=board;
+        this.board = board;
     }
 
     public void verify() {
-        print p=new print();
-        List<Boolean> results=new ArrayList<>();
+        List<Boolean> results = new ArrayList<>();
 
-        for(int i=0;i<9;i++) {
-            //rows
-            Row_verify rr=new Row_verify(board,i,p);
+        for (int i = 0; i < 9; i++) {
+           
+            Row_verify rr = new Row_verify(board, i);
             results.add(rr.checker());
 
-            //columns
-            Col_verify cc=new Col_verify(board,i,p);
+           
+            Col_verify cc = new Col_verify(board, i);
             results.add(cc.checker());
 
-            //boxes
-            box_verify bb=new box_verify(board,i,p);
+           
+            box_verify bb = new box_verify(board, i);
             results.add(bb.checker());
         }
 
-        boolean ok=true;
-        for(Boolean b:results) {
-            ok&=b;
+        boolean ok = true;
+        for (Boolean b : results) {
+            ok &= b;
         }
 
-        if(ok) {
+        if (ok) {
             System.out.println("***************************************************************");
             System.out.println("VALID");
             System.out.println("***************************************************************");
@@ -46,7 +43,7 @@ public class mod_0 {
             System.out.println("***************************************************************");
             System.out.println("INVALID");
             System.out.println("***************************************************************");
-            p.printResults();
+            print.get_instance().printResults();
         }
     }
 }

@@ -17,7 +17,7 @@ public class mod_27 {
     }
 
     public void verify() {
-        print p=new print();
+       // print p=new print();
         List<Boolean> results = new ArrayList<>();
         List<thread> threads = new ArrayList<>();
         List<Thread> realthreads = new ArrayList<>();
@@ -25,7 +25,7 @@ public class mod_27 {
         for (int i = 0; i < 9; i++) {
 
             //for rows
-            Row_verify rr = new Row_verify(board, i,p);
+            Row_verify rr = new Row_verify(board, i);
             thread thr = new thread(rr);
             Thread tr = new Thread(thr);//real thread row bgd
             threads.add(thr);
@@ -33,7 +33,7 @@ public class mod_27 {
             tr.start();
 
             // for cols
-            Col_verify cc = new Col_verify(board, i,p);
+            Col_verify cc = new Col_verify(board, i);
             thread thc = new thread(cc);
             Thread tc = new Thread(thc);//real thread row bgd
             threads.add(thc);
@@ -41,7 +41,7 @@ public class mod_27 {
             tc.start();
 
             //for b
-            box_verify bb = new box_verify(board, i ,p);
+            box_verify bb = new box_verify(board, i);
             thread thb = new thread(bb);
             Thread tb = new Thread(thb);//real thread row bgd
             threads.add(thb);
@@ -76,7 +76,7 @@ public class mod_27 {
             System.out.println("***************************************************************");
             System.out.println("INVALID");
             System.out.println("***************************************************************");
-            p.printResults();           
+            print.get_instance().printResults();           
         }
 
     }
