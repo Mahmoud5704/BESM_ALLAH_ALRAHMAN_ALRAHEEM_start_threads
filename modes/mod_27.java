@@ -35,7 +35,7 @@ public class mod_27 {
             // for cols
             Col_verify cc = new Col_verify(board, i);
             CheckerThread thc = new CheckerThread(cc);
-            Thread tc = new Thread(thc);//real CheckerThread row bgd
+            Thread tc = new Thread(thc);//real CheckerThread col bgd
             threads.add(thc);
             realthreads.add(tc);
             tc.start();
@@ -43,7 +43,7 @@ public class mod_27 {
             //for b
             box_verify bb = new box_verify(board, i);
             CheckerThread thb = new CheckerThread(bb);
-            Thread tb = new Thread(thb);//real CheckerThread row bgd
+            Thread tb = new Thread(thb);//real CheckerThread box bgd
             threads.add(thb);
             realthreads.add(tb);
             tb.start();
@@ -84,3 +84,4 @@ public class mod_27 {
  
 
 }
+
