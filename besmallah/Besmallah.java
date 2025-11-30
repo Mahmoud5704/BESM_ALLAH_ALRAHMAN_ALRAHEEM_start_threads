@@ -2,6 +2,7 @@ package besmallah;
 
 import modes.mod_27;
 import csv_files.CSVReader;
+import modes.Mode3;
 
 public class Besmallah {
 
@@ -29,10 +30,11 @@ public class Besmallah {
             case 0:
                 System.out.println("not done yet");
             case 3:
-                System.out.println("not done yet");
+                Mode3 m3 = new Mode3(board);
+                m3.verify();
             case 27:
-                mod_27 m=new mod_27(board);
-                m.verify();
+                mod_27 m27 = new mod_27(board);
+                m27.verify();
         }
     }
 }

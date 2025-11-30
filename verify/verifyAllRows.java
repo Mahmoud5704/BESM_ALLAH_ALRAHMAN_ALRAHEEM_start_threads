@@ -10,23 +10,22 @@ import interface_abstract.check;
  *
  * @author zeyad
  */
-public class verifyAllColumns implements check{
+public class verifyAllRows implements check{
     private int[][] board;
     private print printer;
     private boolean isValid = true;
-    public verifyAllColumns(int[][] board){
+    public verifyAllRows(int[][] board){
         this.board = board;
         this.printer = new print();
     }
     @Override
     public boolean checker() {
-        Col_verify columnVerifier;
+        Row_verify rowVerifier;
         for(int i = 0; i < 9; i++){
-            columnVerifier = new Col_verify(board, i, printer);
-            if(!columnVerifier.checker())
+            rowVerifier = new Row_verify(board, i, printer);
+            if(!rowVerifier.checker())
                 isValid = false;
         }
         return isValid;
     }
-    
 }
