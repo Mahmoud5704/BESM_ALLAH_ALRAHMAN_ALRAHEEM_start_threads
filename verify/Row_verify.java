@@ -9,12 +9,10 @@ public class Row_verify extends dublicates implements  check {
 
     int row;
     int[][] board;
-    print p;
 
-    public Row_verify(int[][] board, int row, print p) {
+    public Row_verify(int[][] board, int row) {
         this.row = row;
         this.board = board;
-        this.p = p;
     }
 
     public List<Integer> find_dub(int[] row, int x) {
@@ -35,7 +33,7 @@ public class Row_verify extends dublicates implements  check {
             if (dups.size() > 1) {
                 String s = "Duplicates of " + x + " in ROW " + row + " at cols: " + dups;
               //  System.out.println(s);
-                p.setrow_toprint(s);
+                print.get_instance().setrow_toprint(s);
                 ok = false;
             }
         }

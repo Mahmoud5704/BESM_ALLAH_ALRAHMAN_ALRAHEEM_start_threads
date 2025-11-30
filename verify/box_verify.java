@@ -9,12 +9,10 @@ public class box_verify extends dublicates implements  check {
 
     int box;
     int[][] board;
-    print p;
 
-    public box_verify(int[][] board, int box,print p) {
+    public box_verify(int[][] board, int box){
         this.box = box;
         this.board = board;
-        this.p=p;
     }
 
 
@@ -41,7 +39,7 @@ public class box_verify extends dublicates implements  check {
                 ok = false;
                 String s = "Duplicates of " + x + " in BOX " + box + " at positions: " + positions;
               //  System.out.println(s);
-                p.setbox_toprint(s);
+                print.get_instance().setbox_toprint(s);
             }
         }
 

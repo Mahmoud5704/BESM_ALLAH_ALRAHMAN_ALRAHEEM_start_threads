@@ -7,6 +7,14 @@ public class print {
     private ArrayList<String> rrr = new ArrayList<>();
     private ArrayList<String> ccc = new ArrayList<>();
     private ArrayList<String> bbb = new ArrayList<>();
+    private static print instance = null;
+
+    public static print get_instance() {
+        if (instance == null) {
+            instance = new print();
+        }
+        return instance;
+    }
 
     public synchronized void setrow_toprint(String s) {
         rrr.add(s);

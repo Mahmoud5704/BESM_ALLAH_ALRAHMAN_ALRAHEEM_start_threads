@@ -8,12 +8,12 @@ public class Col_verify extends dublicates implements check {
 
     int col;
     int[][] board;
-    print p;
+   
 
-    public Col_verify(int[][] board, int col, print p) {
+    public Col_verify(int[][] board, int col) {
         this.col = col;
         this.board = board;
-        this.p = p;
+        
     }
 
     public boolean checker() {
@@ -27,7 +27,7 @@ public class Col_verify extends dublicates implements check {
             if (dups.size() > 1) {
                 String s = "Duplicates of " + x + " in col " + col + " at rows: " + dups;
                // System.out.println(s);
-                p.setcol_toprint(s);
+                print.get_instance().setcol_toprint(s);
                 ok = false;
             }
         }
