@@ -15,15 +15,6 @@ public class Row_verify extends dublicates implements  check {
         this.board = board;
     }
 
-    public List<Integer> find_dub(int[] row, int x) {
-        List<Integer> ind = new ArrayList<>();
-        for (int j = 0; j < row.length; j++) {
-            if (row[j] == x) {
-                ind.add(j);
-            }
-        }
-        return ind;
-    }
 
     public boolean checker() {
         int[] r = board[row];
