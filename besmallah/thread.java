@@ -3,7 +3,6 @@ import interface_abstract.check;
 
 
 public class thread implements Runnable{
-
     boolean y;
     check c ;
     public thread(check c) {
