@@ -2,10 +2,10 @@ package besmallah;
 import interface_abstract.check;
 
 
-public class thread implements Runnable{
+public class CheckerThread implements Runnable{
     boolean y;
     check c ;
-    public thread(check c) {
+    public CheckerThread(check c) {
         this.c=c;
     }
 

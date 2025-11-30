@@ -9,7 +9,7 @@ public class print {
     private ArrayList<String> bbb = new ArrayList<>();
     private static print instance = null;
 
-    public static print get_instance() {
+    public synchronized static print get_instance() {
         if (instance == null) {
             instance = new print();
         }

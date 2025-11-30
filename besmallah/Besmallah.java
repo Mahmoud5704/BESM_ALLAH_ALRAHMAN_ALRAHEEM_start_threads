@@ -3,6 +3,7 @@ package besmallah;
 import csv_files.CSVReader;
 import modes.mod_0;
 import modes.mod_27;
+import modes.mod_3;
 
 public class Besmallah {
 
@@ -47,8 +48,8 @@ public class Besmallah {
                  m0.verify();
                 break;
             case 3:
-              /*  mod_3  = new Mode3(board);
-                m3.verify();*/
+                mod_3 m3 = new mod_3(board);
+                m3.verify();
                 break;
             case 27:
                 mod_27 m27 = new mod_27(board);

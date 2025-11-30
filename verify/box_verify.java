@@ -7,19 +7,16 @@ import java.util.ArrayList;
 
 public class box_verify extends dublicates implements  check {
 
-    int box;
-    int[][] board;
-
     public box_verify(int[][] board, int box){
-        this.box = box;
+        this.index = box;
         this.board = board;
     }
 
 
 
     public boolean checker() {
-        int startRow = (box / 3) * 3;
-        int startCol = (box % 3) * 3;
+        int startRow = (index / 3) * 3;
+        int startCol = (index % 3) * 3;
         boolean ok = true;
 
         for (int x = 1; x <= 9; x++) {
@@ -37,7 +34,7 @@ public class box_verify extends dublicates implements  check {
 
             if (count > 1) {
                 ok = false;
-                String s = "Duplicates of " + x + " in BOX " + box + " at positions: " + positions;
+                String s = "Duplicates of " + x + " in BOX " + index + " at positions: " + positions;
               //  System.out.println(s);
                 print.get_instance().setbox_toprint(s);
             }
