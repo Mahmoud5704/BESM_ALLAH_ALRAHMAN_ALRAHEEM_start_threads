@@ -4,7 +4,6 @@ import java.util.List;
 
 
 public abstract class dublicates {
-    protected int index;
     protected int[][] board;
     public List<Integer> find_dub(int[] rc, int x) {
         List<Integer> ind = new ArrayList<>();
@@ -15,7 +14,5 @@ public abstract class dublicates {
         }
         return ind;
     }
-    public void setIndex(int newIndex){
-        this.index = newIndex;
-    }
+
 }
