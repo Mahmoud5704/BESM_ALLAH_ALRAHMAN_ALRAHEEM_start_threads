@@ -6,13 +6,12 @@ import java.util.List;
 
 public class Col_verify extends dublicates implements check {
 
-    public Col_verify(int[][] board, int col) {
-        this.index = col;
+    public Col_verify(int[][] board) {
         this.board = board;
         
     }
 
-    public boolean checker() {
+    public boolean checker(int index) {
         int[] c = new int[9];
         for (int i = 0; i < 9; i++) {
             c[i] = board[i][index];

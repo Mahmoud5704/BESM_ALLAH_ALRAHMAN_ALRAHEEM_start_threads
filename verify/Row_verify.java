@@ -8,8 +8,7 @@ import java.util.ArrayList;
 public class Row_verify extends dublicates implements  check {
 
 
-    public Row_verify(int[][] board, int row) {
-        this.index = row;
+    public Row_verify(int[][] board) {
         this.board = board;
     }
 
@@ -23,7 +22,7 @@ public class Row_verify extends dublicates implements  check {
         return ind;
     }
 
-    public boolean checker() {
+    public boolean checker(int index) {
         int[] r = board[index];
         boolean ok = true;
         for (int x = 1; x <= 9; x++) {

@@ -7,14 +7,14 @@ import java.util.ArrayList;
 
 public class box_verify extends dublicates implements  check {
 
-    public box_verify(int[][] board, int box){
-        this.index = box;
+    public box_verify(int[][] board){
+       
         this.board = board;
     }
 
 
 
-    public boolean checker() {
+    public boolean checker(int index) {
         int startRow = (index / 3) * 3;
         int startCol = (index % 3) * 3;
         boolean ok = true;

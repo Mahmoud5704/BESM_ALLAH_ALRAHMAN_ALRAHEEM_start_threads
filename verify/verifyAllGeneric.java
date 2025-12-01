@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package verify;
 import interface_abstract.check;
-import interface_abstract.dublicates;
-/**
- *
- * @author zeyad
- */
-public class verifyAllGeneric<T extends dublicates & check> implements check{
+
+public class verifyAllGeneric<T extends check> implements check{
     private int[][] board;
     private T verifier;
     public verifyAllGeneric(int[][] board, T verifier){
@@ -18,11 +11,10 @@ public class verifyAllGeneric<T extends dublicates & check> implements check{
     }
 
     @Override
-    public boolean checker() {
+    public boolean checker(int index) {
         boolean ok = true;
         for(int i = 0; i < 9; i++){
-            verifier.setIndex(i);
-            if(!verifier.checker()){
+            if(!verifier.checker(i)){
                 ok = false;
             }
         }
