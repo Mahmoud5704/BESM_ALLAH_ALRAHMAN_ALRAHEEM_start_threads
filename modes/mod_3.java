@@ -16,14 +16,16 @@ public class mod_3 {
         this.board = board;
     }
     public void verify(){
-        verifyAllGeneric columnVerifier = new verifyAllGeneric(board, new Col_verify(board, 0));
-        verifyAllGeneric rowVerifier = new verifyAllGeneric(board, new Row_verify(board, 0));
-        verifyAllGeneric boxVerifier = new verifyAllGeneric(board, new box_verify(board, 0));
-        CheckerThread checker1 = new CheckerThread(columnVerifier);
+        verifyAllGeneric columnVerifier = new verifyAllGeneric(board, new Col_verify(board));
+        verifyAllGeneric rowVerifier = new verifyAllGeneric(board, new Row_verify(board));
+        verifyAllGeneric boxVerifier = new verifyAllGeneric(board, new box_verify(board));
+        
+        CheckerThread checker1 = new CheckerThread(columnVerifier,0);
         Thread thread1 = new Thread(checker1);
-        CheckerThread checker2 = new CheckerThread(rowVerifier);
+        CheckerThread checker2 = new CheckerThread(rowVerifier,0);
         Thread thread2 = new Thread(checker2);
-        CheckerThread checker3 = new CheckerThread(boxVerifier);
+        CheckerThread checker3 = new CheckerThread(boxVerifier,0);
+        
         Thread thread3 = new Thread(checker3);
         thread1.start();
         thread2.start();
@@ -33,7 +35,7 @@ public class mod_3 {
             thread2.join();
             thread3.join();
         } catch (InterruptedException ex) {
-            System.getLogger(mod_3.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+             System.out.println("Thread interrupted!");
         }
         if(!checker1.get_result() || !checker2.get_result() || !checker3.get_result())
             print.get_instance().printResults();
